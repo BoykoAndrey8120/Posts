@@ -8,10 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let testPosts = ApiClient()
+    let post: Posts? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        testPosts.fetchPosts { (post) in
+            print(post)
+        }
     }
 
 
