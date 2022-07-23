@@ -15,6 +15,8 @@
 		04CEF10B288B331300E75435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CEF109288B331300E75435 /* LaunchScreen.storyboard */; };
 		04CEF116288B34B100E75435 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF115288B34B000E75435 /* ApiClient.swift */; };
 		04CEF119288B351F00E75435 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF118288B351F00E75435 /* Posts.swift */; };
+		04CEF128288BFD0500E75435 /* PostsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF126288BFD0500E75435 /* PostsCollectionViewCell.swift */; };
+		04CEF129288BFD0500E75435 /* PostsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CEF127288BFD0500E75435 /* PostsCollectionViewCell.xib */; };
 		87A4DB8F02B7364B081FAF45 /* Pods_Posts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335BC41910ACA8C1D8A3AE9F /* Pods_Posts.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		04CEF10C288B331300E75435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04CEF115288B34B000E75435 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		04CEF118288B351F00E75435 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		04CEF126288BFD0500E75435 /* PostsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCollectionViewCell.swift; sourceTree = "<group>"; };
+		04CEF127288BFD0500E75435 /* PostsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsCollectionViewCell.xib; sourceTree = "<group>"; };
 		335BC41910ACA8C1D8A3AE9F /* Pods_Posts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBAA9807691DF052DCA595A /* Pods-Posts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts.release.xcconfig"; path = "Target Support Files/Pods-Posts/Pods-Posts.release.xcconfig"; sourceTree = "<group>"; };
 		606C31254BB202404A16EEBC /* Pods-Posts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts.debug.xcconfig"; path = "Target Support Files/Pods-Posts/Pods-Posts.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,10 +74,9 @@
 				04CEF0FE288B330200E75435 /* AppDelegate.swift */,
 				04CEF100288B330200E75435 /* SceneDelegate.swift */,
 				04CEF102288B330200E75435 /* ViewController.swift */,
+				04CEF11F288BF6F300E75435 /* View */,
 				04CEF114288B348F00E75435 /* Model */,
-				04CEF104288B330200E75435 /* Main.storyboard */,
 				04CEF107288B331300E75435 /* Assets.xcassets */,
-				04CEF109288B331300E75435 /* LaunchScreen.storyboard */,
 				04CEF10C288B331300E75435 /* Info.plist */,
 			);
 			path = Posts;
@@ -86,6 +89,17 @@
 				04CEF118288B351F00E75435 /* Posts.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		04CEF11F288BF6F300E75435 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04CEF104288B330200E75435 /* Main.storyboard */,
+				04CEF109288B331300E75435 /* LaunchScreen.storyboard */,
+				04CEF126288BFD0500E75435 /* PostsCollectionViewCell.swift */,
+				04CEF127288BFD0500E75435 /* PostsCollectionViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3A3A9A8CCA2D15F8C4337393 /* Pods */ = {
@@ -165,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CEF10B288B331300E75435 /* LaunchScreen.storyboard in Resources */,
+				04CEF129288BFD0500E75435 /* PostsCollectionViewCell.xib in Resources */,
 				04CEF108288B331300E75435 /* Assets.xcassets in Resources */,
 				04CEF106288B330200E75435 /* Main.storyboard in Resources */,
 			);
@@ -222,6 +237,7 @@
 				04CEF103288B330200E75435 /* ViewController.swift in Sources */,
 				04CEF0FF288B330200E75435 /* AppDelegate.swift in Sources */,
 				04CEF119288B351F00E75435 /* Posts.swift in Sources */,
+				04CEF128288BFD0500E75435 /* PostsCollectionViewCell.swift in Sources */,
 				04CEF101288B330200E75435 /* SceneDelegate.swift in Sources */,
 				04CEF116288B34B100E75435 /* ApiClient.swift in Sources */,
 			);

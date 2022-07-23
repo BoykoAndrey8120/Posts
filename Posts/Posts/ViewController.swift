@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var postCollection: UICollectionView!
+    
     let testPosts = ApiClient()
     let post: Posts? = nil
 
@@ -19,6 +21,8 @@ class ViewController: UIViewController {
         }
     }
 
-
+    @IBAction func sortButtonTap(_ sender: Any) {
+    }
+    
 }
 
