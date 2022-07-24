@@ -16,10 +16,18 @@ struct Post: Decodable {
     let timeshamp: Int?
     let title: String?
     let previewText: String?
-    let likesCount: String?
+    let likesCount: Int?
+    var selected: Bool? = false
+    
+    enum CodingKeys: String, CodingKey {
+        case previewText = "preview_text"
+        case likesCount = "likes_count"
+        case postId
+        case timeshamp
+        case title
+        case selected
+    }
+    
 }
 
-enum CodingKeys: String, CodingKey {
-    case previewText = "preview_text"
-    case likesCount = "likes_count"
-}
+
