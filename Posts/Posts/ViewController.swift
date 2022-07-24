@@ -7,15 +7,42 @@
 
 import UIKit
 
+protocol ClickDelegate {
+    func clicked(_ row: Int)
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var postsTableView: UITableView!
-  //  @IBOutlet weak var postCollection: UICollectionView!
     
     let testPosts = ApiClient()
     var array: [Post] = []
   
+ 
+    @IBAction func tapSortButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "Sort feed by rating", style: .default , handler:{ (UIAlertAction)in
+                self.array.sort{
+                    $0.likesCount ?? 0 > $1.likesCount ?? 0 }
+                self.postsTableView.reloadData()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Sort feed by date", style: .default , handler:{ (UIAlertAction)in
+                self.array.sort{
+                    $0.timeshamp ?? 0 > $1.timeshamp ?? 0 }
+                self.postsTableView.reloadData()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+                
+            }))
 
+            self.present(alert, animated: true, completion: {
+                print("completion block")
+            })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         testPosts.fetchPosts(handler: { [self] posts in
@@ -30,11 +57,7 @@ class ViewController: UIViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         postsTableView.register(UINib(nibName: "PostsTableViewCell", bundle: nil), forCellReuseIdentifier: "PostsTableViewCell")
-//        postCollection.register(UINib(nibName: "PostsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PostsCollectionViewCell")
     }
-
-//    @IBAction func sortButtonTap(_ sender: Any) {
-//    }
 }
 
 //MARK: - UITableViewDelegate
@@ -47,30 +70,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostsTableViewCell", for: indexPath) as? PostsTableViewCell else { return UITableViewCell() }
         cell.setup(post: array[indexPath.row])
+        cell.cellIndex = indexPath
+        cell.delegate = self
         return cell
     }
-    
-    
 }
 
-//extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return array.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostsCollectionViewCell", for: indexPath) as? PostsCollectionViewCell else {
-//            return UICollectionViewCell()
-//        }
-//        cell.setup(post: array[indexPath.item])
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        return CGSize(width: collectionView.layer.frame.size.width, height: 100.0)
-//    }
-//}
+extension ViewController: ClickDelegate {
+    func clicked(_ row: Int) {
+        if array[row].selected == nil { array[row].selected = true
+        } else {
+            array[row].selected?.toggle()
+        }
+        postsTableView.reloadData()
+    }
+}
 
 

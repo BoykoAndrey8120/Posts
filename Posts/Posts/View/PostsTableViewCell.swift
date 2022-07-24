@@ -13,12 +13,21 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var dayAgoLabel: UILabel!
     
+    
+    var delegate: ClickDelegate?
+    var cellIndex: IndexPath?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    @IBAction func tapButton(_ sender: Any) {
+        delegate?.clicked(cellIndex!.row)
+       // previewText.numberOfLines = 0
     }
     
     func setup(post: Post?) {
@@ -30,6 +39,11 @@ class PostsTableViewCell: UITableViewCell {
             dayAgoLabel.text = String(dayAgo)
         }
         previewText.text = post?.previewText ?? ""
+        if post?.selected == true {
+         previewText.numberOfLines = 0
+        } else {
+            previewText.numberOfLines = 2
+        }
     }
     
 }

@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="571" height="151"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-S5-EWg">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-S5-EWg">
                         <rect key="frame" x="0.0" y="0.0" width="571" height="33.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                         <nil key="textColor"/>
@@ -99,6 +99,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgU-wY-Mqm">
                         <rect key="frame" x="20" y="112.5" width="531" height="38.5"/>
                         <state key="normal" title="Expand"/>
+                        <connections>
+                            <action selector="tapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="abh-8Z-iA0"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

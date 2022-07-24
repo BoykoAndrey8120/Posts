@@ -23,7 +23,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" width="20" style="done" id="pGr-Ss-HKn">
                                             <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                             <connections>
-                                                <action selector="sortButtonTap:" destination="BYZ-38-t0r" id="xkO-F3-jES"/>
+                                                <action selector="tapSortButton:" destination="BYZ-38-t0r" id="zJh-p4-ddh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
