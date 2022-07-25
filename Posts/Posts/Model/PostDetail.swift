@@ -11,7 +11,7 @@ import Foundation
 //    let post: [String: Any]
 //}
 
-struct PostNew: Decodable {
+struct PostDetail: Decodable {
    let post: News
 }
     

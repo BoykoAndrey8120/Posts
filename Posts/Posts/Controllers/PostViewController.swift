@@ -9,14 +9,14 @@ import UIKit
 
 class PostViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var postText: UITextView!
-    @IBOutlet weak var likesLabel: UILabel!
-    @IBOutlet weak var dayAgo: UILabel!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var postText: UITextView!
+    @IBOutlet private weak var likesLabel: UILabel!
+    @IBOutlet private weak var dayAgo: UILabel!
     
     var url = ""
-    let testPost = ApiClient()
+    private let testPost = ApiClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class PostViewController: UIViewController {
             if let urlImage = urlImage {
                 self.image.load(url: urlImage)
             }
-            self.likesLabel.text = String(post.post.likesCount ?? 0) ?? ""
+            self.likesLabel.text = String(post.post.likesCount ?? 0)
             self.dayAgo.text = Date().timeAgoDisplay(time: post.post.timeshamp)
         })
     }

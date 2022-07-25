@@ -20,7 +20,7 @@
 		04CEF135288D7FE200E75435 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF134288D7FE100E75435 /* DateFormatter.swift */; };
 		04CEF13D288DBE5000E75435 /* PostPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF13C288DBE5000E75435 /* PostPresentation.swift */; };
 		04CEF143288DCE6500E75435 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF142288DCE6300E75435 /* PostViewController.swift */; };
-		04CEF147288DD7FB00E75435 /* PostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF146288DD7FB00E75435 /* PostNew.swift */; };
+		04CEF147288DD7FB00E75435 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF146288DD7FB00E75435 /* PostDetail.swift */; };
 		04CEF14A288EF84300E75435 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF149288EF84000E75435 /* ImageLoader.swift */; };
 		87A4DB8F02B7364B081FAF45 /* Pods_Posts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335BC41910ACA8C1D8A3AE9F /* Pods_Posts.framework */; };
 /* End PBXBuildFile section */
@@ -41,7 +41,7 @@
 		04CEF134288D7FE100E75435 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		04CEF13C288DBE5000E75435 /* PostPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresentation.swift; sourceTree = "<group>"; };
 		04CEF142288DCE6300E75435 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		04CEF146288DD7FB00E75435 /* PostNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNew.swift; sourceTree = "<group>"; };
+		04CEF146288DD7FB00E75435 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		04CEF149288EF84000E75435 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		335BC41910ACA8C1D8A3AE9F /* Pods_Posts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Posts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBAA9807691DF052DCA595A /* Pods-Posts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Posts.release.xcconfig"; path = "Target Support Files/Pods-Posts/Pods-Posts.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,10 +95,10 @@
 		04CEF114288B348F00E75435 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04CEF153288F27A500E75435 /* Services */,
 				04CEF13C288DBE5000E75435 /* PostPresentation.swift */,
-				04CEF115288B34B000E75435 /* ApiClient.swift */,
 				04CEF118288B351F00E75435 /* Posts.swift */,
-				04CEF146288DD7FB00E75435 /* PostNew.swift */,
+				04CEF146288DD7FB00E75435 /* PostDetail.swift */,
 				04CEF134288D7FE100E75435 /* DateFormatter.swift */,
 			);
 			path = Model;
@@ -123,6 +123,14 @@
 				04CEF142288DCE6300E75435 /* PostViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04CEF153288F27A500E75435 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04CEF115288B34B000E75435 /* ApiClient.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		3A3A9A8CCA2D15F8C4337393 /* Pods */ = {
@@ -257,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CEF147288DD7FB00E75435 /* PostNew.swift in Sources */,
+				04CEF147288DD7FB00E75435 /* PostDetail.swift in Sources */,
 				04CEF143288DCE6500E75435 /* PostViewController.swift in Sources */,
 				04CEF103288B330200E75435 /* ViewController.swift in Sources */,
 				04CEF0FF288B330200E75435 /* AppDelegate.swift in Sources */,
