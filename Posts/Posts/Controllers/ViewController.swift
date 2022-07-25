@@ -27,38 +27,59 @@ class ViewController: UIViewController {
                     self.array = posts.posts.map { PostPresentation(post: $0) }
                     self.postsTableView.reloadData()
                 })
-        
-//        print(testPosts.presentationModelArray)
+
         postsTableView.delegate = self
         postsTableView.dataSource = self
         postsTableView.register(UINib(nibName: "PostsTableViewCell", bundle: nil), forCellReuseIdentifier: "PostsTableViewCell")
     }
 
-    @IBAction func tapSortButton(_ sender: Any) {
+    //MARK: - Action
+    
+    
+    @IBAction func tapOpenCloseButton(_ sender: Any) {
         let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
-            
-            alert.addAction(UIAlertAction(title: "Sort feed by rating", style: .default , handler:{ (UIAlertAction)in
-                self.array.sort{
-                    $0.likesCount ?? 0 > $1.likesCount ?? 0 }
-                self.postsTableView.reloadData()
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Sort feed by date", style: .default , handler:{ (UIAlertAction)in
-                self.array.sort{
-                    $0.dayAgo ?? "" > $1.dayAgo ?? "" }
-                self.postsTableView.reloadData()
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
-                
-            }))
-
-            self.present(alert, animated: true, completion: {
-                print("completion block")
-            })
+        
+        alert.addAction(UIAlertAction(title: "Open", style: .default , handler:{ (UIAlertAction) in
+            for (index, _) in self.array.enumerated() {
+                self.array[index].selected = true
+            }
+            self.postsTableView.reloadData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Close", style: .default , handler:{ (UIAlertAction) in
+            for (index, _) in self.array.enumerated() {
+                self.array[index].selected = false
+            }
+            self.postsTableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+        }))
+        self.present(alert, animated: true, completion: {
+        })
     }
     
-
+    @IBAction func tapSortButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Sort feed by rating", style: .default , handler:{ (UIAlertAction)in
+            self.array.sort{
+                $0.likesCount ?? 0 > $1.likesCount ?? 0 }
+            self.postsTableView.reloadData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Sort feed by date", style: .default , handler:{ (UIAlertAction)in
+            self.array.sort{
+                $0.dayAgo ?? "" < $1.dayAgo ?? "" }
+            self.postsTableView.reloadData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            
+        }))
+        
+        self.present(alert, animated: true, completion: {
+        })
+    }
 }
 
 //MARK: - UITableViewDelegate
@@ -77,21 +98,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(array[indexPath.row].id ?? "")
-//        if let id = array[indexPath.row].id {
-//        testPosts.fetchPost(urlString: "https://raw.githubusercontent.com/anton-natife/jsons/master/api/posts/\(id).json", handler: { [weak self] post in
-//            guard let self = self else { return }
-//            //self. = posts.posts.map { PostPresentation(post: $0) }
-//            let newPost = News(postId: post.post.postId,
-//                               timeshamp: post.post.timeshamp,
-//                               title: post.post.title,
-//                               text: post.post.text,
-//                               postImage: post.post.postImage,
-//                               likes_count: post.post.likes_count)
-//            self.new = newPost
-//            print(newPost)
-//        })
-//        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: segueIdentifier) as? PostViewController
         if let vc = vc {
@@ -103,6 +109,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: - ClickDelegate
 extension ViewController: ClickDelegate {
     func clicked(_ row: Int) {
         if array[row].selected == nil { array[row].selected = true

@@ -39,10 +39,10 @@ class PostsTableViewCell: UITableViewCell {
         previewText.text = post?.previewText ?? ""
         if post?.selected == true {
             previewText.numberOfLines = 0
-            button.titleLabel?.text = "Collapse"
+            button.setTitle("Collapse", for: .normal)
         } else {
             previewText.numberOfLines = 2
-            button.titleLabel?.text = "Expand"
+            button.setTitle("Expand", for: .normal) 
         }
     }
 }

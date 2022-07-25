@@ -16,11 +16,19 @@ struct PostNew: Decodable {
 }
     
     struct News: Decodable {
-    
     let postId: Int?
     let timeshamp: Int?
     let title: String?
     let text: String?
     let postImage: String?
-    let likes_count: Int?
+    let likesCount: Int?
+        
+        enum CodingKeys: String, CodingKey {
+            case postId
+            case timeshamp
+            case title
+            case text
+            case postImage
+            case likesCount = "likes_count" 
+        }
 }

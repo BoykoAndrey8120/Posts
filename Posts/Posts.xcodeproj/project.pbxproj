@@ -83,8 +83,7 @@
 			children = (
 				04CEF0FE288B330200E75435 /* AppDelegate.swift */,
 				04CEF100288B330200E75435 /* SceneDelegate.swift */,
-				04CEF102288B330200E75435 /* ViewController.swift */,
-				04CEF142288DCE6300E75435 /* PostViewController.swift */,
+				04CEF14C288F0DC400E75435 /* Controllers */,
 				04CEF11F288BF6F300E75435 /* View */,
 				04CEF114288B348F00E75435 /* Model */,
 				04CEF107288B331300E75435 /* Assets.xcassets */,
@@ -115,6 +114,15 @@
 				04CEF12F288C720E00E75435 /* PostsTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04CEF14C288F0DC400E75435 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04CEF102288B330200E75435 /* ViewController.swift */,
+				04CEF142288DCE6300E75435 /* PostViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3A3A9A8CCA2D15F8C4337393 /* Pods */ = {

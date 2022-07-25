@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct PostPresentation {
     let id: Int?
     let title: String?
