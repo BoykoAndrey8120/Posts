@@ -33,10 +33,10 @@
                         <rect key="frame" x="0.0" y="44.5" width="571" height="53.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neu-M5-VwJ">
-                                <rect key="frame" x="0.0" y="0.0" width="106" height="53.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="111" height="53.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfG-92-JkO">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="53.5"/>
+                                        <rect key="frame" x="20" y="0.0" width="91" height="53.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A2K-wy-Syb">
                                                 <rect key="frame" x="0.0" y="1.5" width="53.5" height="51"/>
@@ -46,7 +46,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWl-UR-RfO" userLabel="likes">
-                                                <rect key="frame" x="53.5" y="0.0" width="52.5" height="53.5"/>
+                                                <rect key="frame" x="53.5" y="0.0" width="37.5" height="53.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -59,17 +59,17 @@
                                     <constraint firstAttribute="trailing" secondItem="FfG-92-JkO" secondAttribute="trailing" id="ExL-tM-QYq"/>
                                     <constraint firstAttribute="bottom" secondItem="FfG-92-JkO" secondAttribute="bottom" id="R22-Pj-jcP"/>
                                     <constraint firstItem="FfG-92-JkO" firstAttribute="top" secondItem="Neu-M5-VwJ" secondAttribute="top" id="eHr-5e-kuc"/>
-                                    <constraint firstItem="FfG-92-JkO" firstAttribute="leading" secondItem="Neu-M5-VwJ" secondAttribute="leading" id="krX-hK-38I"/>
+                                    <constraint firstItem="FfG-92-JkO" firstAttribute="leading" secondItem="Neu-M5-VwJ" secondAttribute="leading" constant="20" id="krX-hK-38I"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8Y-dC-Fdp">
                                 <rect key="frame" x="465" y="0.0" width="106" height="53.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-1J-xXD">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="53.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhS-wE-stN">
-                                                <rect key="frame" x="0.0" y="0.0" width="106" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="53.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                     <constraint firstItem="3bc-1J-xXD" firstAttribute="top" secondItem="e8Y-dC-Fdp" secondAttribute="top" id="4Qo-1v-e2G"/>
                                     <constraint firstItem="3bc-1J-xXD" firstAttribute="leading" secondItem="e8Y-dC-Fdp" secondAttribute="leading" id="gka-bd-vO9"/>
                                     <constraint firstAttribute="bottom" secondItem="3bc-1J-xXD" secondAttribute="bottom" id="wWL-nW-Q2B"/>
-                                    <constraint firstAttribute="trailing" secondItem="3bc-1J-xXD" secondAttribute="trailing" id="xya-mu-4SO"/>
+                                    <constraint firstAttribute="trailing" secondItem="3bc-1J-xXD" secondAttribute="trailing" constant="20" id="xya-mu-4SO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -92,7 +92,10 @@
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgU-wY-Mqm">
                         <rect key="frame" x="20" y="98" width="531" height="53"/>
-                        <state key="normal" title="Expand"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <state key="normal" title="Expand">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <connections>
                             <action selector="tapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="abh-8Z-iA0"/>
                         </connections>
@@ -129,6 +132,9 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -42,7 +42,8 @@ class PostsTableViewCell: UITableViewCell {
             button.setTitle("Collapse", for: .normal)
         } else {
             previewText.numberOfLines = 2
-            button.setTitle("Expand", for: .normal) 
+            button.setTitle("Expand", for: .normal)
         }
+        button.layer.cornerRadius = 10
     }
 }
