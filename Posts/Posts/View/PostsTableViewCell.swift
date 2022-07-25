@@ -13,6 +13,7 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var dayAgoLabel: UILabel!
     
+    @IBOutlet weak var button: UIButton!
     
     var delegate: ClickDelegate?
     var cellIndex: IndexPath?
@@ -27,23 +28,21 @@ class PostsTableViewCell: UITableViewCell {
     
     @IBAction func tapButton(_ sender: Any) {
         delegate?.clicked(cellIndex!.row)
-       // previewText.numberOfLines = 0
     }
     
-    func setup(post: Post?) {
+    func setup(post: PostPresentation?) {
         titleLabel.text = post?.title ?? ""
         if let likes = post?.likesCount {
             likesLabel.text = String(likes) 
         }
-        if let dayAgo = post?.timeshamp {
-            dayAgoLabel.text = String(dayAgo)
-        }
+        dayAgoLabel.text = post?.dayAgo ?? ""
         previewText.text = post?.previewText ?? ""
         if post?.selected == true {
-         previewText.numberOfLines = 0
+            previewText.numberOfLines = 0
+            button.titleLabel?.text = "Collapse"
         } else {
             previewText.numberOfLines = 2
+            button.titleLabel?.text = "Expand"
         }
     }
-    
 }

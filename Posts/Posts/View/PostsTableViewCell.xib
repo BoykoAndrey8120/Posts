@@ -98,7 +98,7 @@
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgU-wY-Mqm">
                         <rect key="frame" x="20" y="112.5" width="531" height="38.5"/>
-                        <state key="normal" title="Expand"/>
+                        <state key="normal" title="Open/Close"/>
                         <connections>
                             <action selector="tapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="abh-8Z-iA0"/>
                         </connections>
@@ -122,6 +122,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="button" destination="bgU-wY-Mqm" id="vtC-G8-I1m"/>
                 <outlet property="dayAgoLabel" destination="UhS-wE-stN" id="Vsf-6n-agn"/>
                 <outlet property="likesLabel" destination="eWl-UR-RfO" id="eZF-zx-S5j"/>
                 <outlet property="previewText" destination="hPB-97-Cpe" id="MEL-G4-Bz4"/>

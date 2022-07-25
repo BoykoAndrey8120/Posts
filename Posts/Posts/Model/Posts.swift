@@ -14,10 +14,12 @@ struct Posts: Decodable {
 struct Post: Decodable {
     let postId: Int?
     let timeshamp: Int?
+    //var time: Date? = nil
     let title: String?
     let previewText: String?
     let likesCount: Int?
-    var selected: Bool? = false
+    //var selected: Bool? = false
+    //var dayAgo: String? = nil
     
     enum CodingKeys: String, CodingKey {
         case previewText = "preview_text"
@@ -25,9 +27,9 @@ struct Post: Decodable {
         case postId
         case timeshamp
         case title
-        case selected
+        //case selected
+       // case dayAgo
     }
-    
 }
 
 
